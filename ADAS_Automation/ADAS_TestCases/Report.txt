@@ -1,0 +1,19 @@
+ACCTestCases
+TestCase1: ACC Active
+TestStep1: Set Mo_Sig_ReadytoDrive to 0x2 (drive)
+TestStep2: Set ACC_Int_status to 0x1 (active)
+TestStep3: Set ACC_MainSwitch_ACC to 0x2 (active)
+TestStep4: Set Gear_signal to 0x3 (drive)
+TestStep5: Set Sig_Spdmtr_Rq > 40kmph
+TestStep6: Set ACC_Set_signal to 0x1 (active)
+TestStep7: Expected: Check ACC_Status should be active
+TestStep7 Passed: ACC status is 0x2 Active, measured value is 2.0
+TestCase2: ACC Passive
+TestStep1: Set Mo_Sig_ReadytoDrive to 0x2 (drive)
+TestStep2: Set ACC_Int_status to 0x1 (active)
+TestStep3: Set ACC_MainSwitch_ACC to 0x1 (OFF)
+TestStep4: Set Gear_signal to 0x3 (drive)
+TestStep5: Set Sig_Spdmtr_Rq > 40kmph
+TestStep6: Set ACC_Set_signal to 0x1 (active)
+TestStep7: Expected: Check ACC_Status should be passive
+TestStep7 Failed: ACC status is not equal to 0x1 passive, measured value is 2.0
