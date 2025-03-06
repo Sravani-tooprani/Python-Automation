@@ -1,0 +1,16 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  
+}
+
+on message BCMMessage
+{
+  @Indicator::Sys_IPC = this.BCM_Signal;
+}
+
